@@ -168,7 +168,13 @@ h2 {
   display: block;
   width: 1.125rem;
   height: 1.125rem;
+  flex-shrink: 0;
   fill: currentColor;
+}
+
+.contact-row a[href*="linkedin"] svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 #about,
