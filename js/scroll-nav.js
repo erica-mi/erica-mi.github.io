@@ -1,10 +1,18 @@
 (function () {
   const header = document.querySelector('.site-header');
-  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav a'));
+
+  function sectionIdForLink(link) {
+    const href = link.getAttribute('href') || '';
+    if (href === '/' || href === './' || href === 'index.html') return 'about';
+    if (href.startsWith('#')) return href.slice(1);
+    return null;
+  }
 
   const sections = navLinks
     .map((link) => {
-      const id = link.getAttribute('href').slice(1);
+      const id = sectionIdForLink(link);
+      if (!id) return null;
       const el = document.getElementById(id);
       return el ? { id, el, link } : null;
     })
@@ -14,7 +22,7 @@
 
   function setActive(id) {
     navLinks.forEach((link) => {
-      if (link.getAttribute('href') === '#' + id) {
+      if (sectionIdForLink(link) === id) {
         link.setAttribute('aria-current', 'page');
       } else {
         link.removeAttribute('aria-current');
