@@ -183,6 +183,7 @@ section {
   line-height: 1.45;
 }
 
+.pub-title strong em,
 .pub-title em {
   font-style: italic;
   font-weight: 700;
@@ -198,13 +199,6 @@ section {
 .pub-authors strong {
   color: var(--accent);
   font-weight: 700;
-}
-
-.pub-detail {
-  margin: 0 0 0.2rem;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text);
 }
 
 .pub-venue {
@@ -334,10 +328,10 @@ section {
   content: "";
   position: absolute;
   left: 4px;
-  top: 0.65rem;
-  bottom: -1.5rem;
+  top: 0.55rem;
+  bottom: -1.4rem;
   width: 1px;
-  background: var(--line);
+  background: var(--border);
 }
 
 .timeline-list > li:last-child .record-body::before {
