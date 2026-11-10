@@ -207,19 +207,6 @@ h2 {
 
 .paper:hover { background: #f6f6f6; color: #111; }
 
-ul {
-  margin: 0.35rem 0 0;
-  padding-left: 1.15rem;
-}
-
-li { margin: 0.18rem 0; }
-
-#skills p { margin: 0 0 0.55rem; }
-
-#skills strong {
-  font-weight: 700;
-}
-
 @media (max-width: 680px) {
   .intro { grid-template-columns: 1fr; }
 
