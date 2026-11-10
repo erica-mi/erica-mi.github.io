@@ -15,7 +15,7 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Site">
-      <a href="#about" aria-current="page">about</a>
+      <a href="#about">about</a>
       <a href="#publications">publications</a>
       <a href="#experience">experience</a>
       <a href="#awards">awards</a>
@@ -24,7 +24,8 @@
   </header>
 
   <main class="page">
-    <article id="about">
+    <article>
+      <div id="about" class="about-intro">
       <div class="intro">
         <div class="intro-photo">
           <img class="portrait" src="assets/img/profile.jpg" width="800" height="800" alt="Erica Mi">
@@ -62,6 +63,7 @@
             My research interest is in human-AI interaction, particularly understanding how interaction behaviors reveal individuals’ AI competence and ability to use AI effectively.
           </p>
         </div>
+      </div>
       </div>
 
       <section id="publications">
@@ -334,5 +336,6 @@
       </section>
     </article>
   </main>
+  <script src="js/scroll-nav.js" defer></script>
 </body>
 </html>
