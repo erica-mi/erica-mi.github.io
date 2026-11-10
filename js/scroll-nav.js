@@ -20,6 +20,16 @@
 
   if (!sections.length) return;
 
+  function stripAboutHash() {
+    if (location.hash !== '#about') return;
+    const path = location.pathname || '/';
+    const url = path + (location.search || '');
+    history.replaceState(null, '', url);
+  }
+
+  stripAboutHash();
+  window.addEventListener('hashchange', stripAboutHash);
+
   function setActive(id) {
     navLinks.forEach((link) => {
       if (sectionIdForLink(link) === id) {
@@ -40,6 +50,7 @@
     }
 
     setActive(active);
+    if (active === 'about') stripAboutHash();
   }
 
   window.addEventListener('scroll', updateActiveSection, { passive: true });
