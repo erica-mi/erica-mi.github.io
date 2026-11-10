@@ -15,7 +15,8 @@ body {
   margin: 0;
   color: var(--text);
   background: #fff;
-  font-family: "Merriweather Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
   font-size: 16.5px;
   line-height: 1.6;
 }
@@ -95,9 +96,9 @@ a:hover { color: #444; }
 }
 
 h1, h2 {
-  font-family: Merriweather, Georgia, serif;
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -218,7 +219,7 @@ h2 {
 }
 
 .org {
-  font-family: Merriweather, Georgia, serif;
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1.35;
@@ -242,7 +243,7 @@ h2 {
 
 .title {
   font-size: 1.02rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
 }
 
