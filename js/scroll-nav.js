@@ -4,9 +4,14 @@
 
   function sectionIdForLink(link) {
     const href = link.getAttribute('href') || '';
-    if (href === '/' || href === './' || href === 'index.html') return 'about';
+    if (href === '/' || href === './' || href === 'index.html' || href === '#about') return 'about';
     if (href.startsWith('#')) return href.slice(1);
     return null;
+  }
+
+  function isAboutHomeLink(link) {
+    const href = link.getAttribute('href') || '';
+    return href === '/' || href === './' || href === 'index.html' || href === '#about';
   }
 
   const sections = navLinks
@@ -52,6 +57,18 @@
     setActive(active);
     if (active === 'about') stripAboutHash();
   }
+
+  function scrollToAbout(e) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    const rootUrl = (location.pathname || '/') + (location.search || '');
+    history.replaceState(null, '', rootUrl);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navLinks.filter(isAboutHomeLink).forEach((link) => {
+    link.addEventListener('click', scrollToAbout);
+  });
 
   window.addEventListener('scroll', updateActiveSection, { passive: true });
   window.addEventListener('resize', updateActiveSection);
